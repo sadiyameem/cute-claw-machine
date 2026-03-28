@@ -23,3 +23,50 @@ body {
     min-height: 600px;
     flex-direction: column;
 }
+
+.pix,.pix::before,.pix::after {
+    width: calc(var(--w) * var(--m));
+    height: calc(var(--h) * var(--m));
+    image-rendering: pixelated;
+    background-size: calc(var(--w) * var(--m)) calc(var(--h) * var(--m));
+}
+
+.pix::before,.pix::after {
+    position: absolute;
+    content: '';
+}
+
+.claw-machine {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--brown);
+    overflow: hidden;
+}
+
+.collection-box {
+    --h: 32px;
+    width: calc(var(--m) * var(--machine-width));
+    margin: calc(var(--m) * var(--h) * -1 - 10px) 0 24px;
+    display: flex;
+    align-items: bottom;
+    justify-content: start;
+}
+
+.collection-box .toy-wrapper {
+    position: relative;
+    width: calc(100% / 6);
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+.collection-box .toy-wrapper .toy::after {
+    top: auto;
+    bottom: 0;
+}
+
+.toy-wrapper.squeeze-in {
+    width: 0;
+    animation: squeeze-in forwards 0.4s;
+    animation-delay: 1.4s;
+}
