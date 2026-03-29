@@ -134,3 +134,97 @@ body {
     height: calc(var(--m) * 170px);
     z-index: 2;
 }
+
+.machine-top,.machine-bottom {
+    position: absolute;
+    width: 100%;
+    --h: 70px;
+    height: calc(var(--h) * var(--m));
+}
+
+.machine-top {
+    top: 0;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+
+.machine-top::after {
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #70f7f372;
+    z-index: 1;
+}
+
+.machine-bottom {
+    bottom: 0;
+    background-color: #def7f6;
+}
+
+.collection-point {
+    position: absolute;
+    bottom: 0;
+    background-image: url('images/image1.png');
+    --w: 44px;
+    --h: 24px;
+    z-index: 0;
+}
+
+.rail {
+    top: 0;
+    left: 0;
+    transition: 0.3s;
+    border: solid var(--blue);
+}
+
+.rail.hori {
+    --h: 5px;
+    width: 100%;
+    background-color: #fff;
+    border-width: 2px 0;
+    z-index: 1;
+}
+
+.rail.vert {
+    position: absolute;
+    --h: 70px;
+    --w: 5px;
+    background-color: #fff;
+    border-width: 0 2px;
+}
+
+.arm-joint {
+    position: absolute;
+    top: 0;
+    left: 0;
+    --w: 5px;
+    --h: 5px;
+    transition: 0.3s;
+    z-index: -1;
+}
+
+.arm-joint::after {
+    position: absolute;
+    border: solid var(--blue) 2px;
+    background-color: #fff;
+    --w: 10px;
+    --h: 10px;
+    top: calc(var(--m) * var(--h) * -0.25);
+    left: calc(var(--m) * var(--w) * -0.25);
+}
+
+.arm::after {
+    position: absolute;
+    --w: 13px;
+    --h: 7px;
+    bottom: calc(var(--m) * -1px);
+    left: calc(var(--m) * -3px);
+    background-image: url('images/image2.png');
+}
+
+.arm.missed::after {
+    background-image: url('images/image3.png');
+}
