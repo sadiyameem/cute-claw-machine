@@ -468,3 +468,85 @@ button {
 .toy.wrapper .toy.cucumber::after {
     background-image: url('images/cucumber-happy.png');
 }
+
+.toy.penguin {
+    --w: 24px;
+    --h: 22px;
+}
+
+.toy.penguin::after {
+    --w: 26px;
+    --h: 24px;
+    top: calc(var(--m) * -1px);
+    left: calc(var(--m) * -1px);
+    background-image: url('images/penguin.png');
+}
+
+.toy.penguin.grabbed::after {
+    background-image: url('images/penguin-close-eyed.png');
+}
+
+.toy-wrapper .toy.penguin::after {
+    background-image: url('images/penguin-sleepy.png');
+}
+
+.toy.robot {
+    --w: 20px;
+    --h: 30px;
+}
+
+.toy.robot::after {
+    --w: 24px;
+    --h: 32px;
+    top: clac(var(--m) * -1px);
+    left: calc(var(--m) * -2px);
+    background-image: url('images/robot.png');
+}
+
+.toy.robot.grabbed::after {
+    background-image: url('images/robot-happy.png');
+}
+
+.toy.wrapper .toy.robot::after {
+    background-image: url('images/robot-smiles.png');
+}
+
+.toy.selected {
+    pointer-events: all;
+}
+
+@keyframes show-toy-1 {
+    0% {
+        opacity: 1;
+        transform: scale(3) translateY(0);
+    }
+    30% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1) translateY(-100vh);
+    }
+}
+
+.control .collection-point {
+    filter: brightness(0.8s);
+    bottom: clac(var(--m) * 8px);
+}
+
+.sign {
+    position: fixed;
+    color: var(--brown);
+    bottom: 10px;
+    right: 10px;
+    font-size: 10px;
+}
+
+a {
+    color: var(--brown);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
