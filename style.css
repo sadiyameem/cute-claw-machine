@@ -228,3 +228,243 @@ body {
 .arm.missed::after {
     background-image: url('images/image3.png');
 }
+
+.control {
+    position: relative;
+    --h: 60px;
+    width: 100%;
+    text-align: right;
+    background-color: var(--dark-blue);
+}
+
+.cover {
+    position: absolute;
+    background-color: var(--machine-color);
+    --top-size: calc(var(--m) * 20px);
+    --bottom-size: calc(var(--m) * 10px);
+    z-index: 4;
+}
+
+.top {
+    top: 0;
+    width: 100%;
+    height: calc(var(--m) * 16px);
+}
+
+.collection-arrow {
+    position: absolute;
+    left: calc(var(--m) * 21px);
+    top: calc(var(--m) * 9px);
+    --w: 8px;
+    --h: 4px;
+    background-image: url('images/image4.png');
+    filter: sepia(1) brightness(0.5);
+}
+
+.bottom {
+    bottom: 0px;
+    width: 100%;
+    height: calc(var(--m) * 8px);
+    background-color: var(--brown);
+}
+
+.left {
+    bottom: 0px;
+    left: 0px;
+    height: calc(var(--m) * 170px);
+    width: calc(var(--m) * 8px);
+}
+
+.right {
+    top: 0;
+    right: 0px;
+    height: 100%;
+    width: calc(var(--m) * 116px);
+}
+
+.instruction {
+    position: absolute;
+    --w: 51px;
+    --h: 12px;
+    background-image: url('images/image5.png');
+    top: calc(var(--m) * 34px);
+    right: calc(var(--m) * 11px);
+}
+
+.arm {
+    position: absolute;
+    --w: 7px;
+    --h: 28px;
+    background-color: #fff;
+    box-shadow: 0 0 0 2px var(--blue);
+    transition: 0.3s;
+    margin-top: calc(var(--m) * -1px);
+    margin-left: calc(var(--m) * -1px);
+}
+
+.claws {
+    position: absolute;
+    --w: 3px;
+    --h: 10px;
+    bottom: calc(var(--m) * -5px);
+    left: calc(var(--m) * 2.5px);
+}
+
+.claws::before,.claws::after {
+    top: 0;
+    --w: 0;
+    --h: 16px;
+    transition: 0.2s;
+}
+
+.claws::before {
+    left: calc(var(--m) * -10px);
+    background-image: url('images/image6.png');
+    --close-angle: 45deg;
+    transform-origin: top right;
+}
+
+.claws::after {
+    left: calc(var(--m) * 2.5px);
+    background-image: url('images/image7.png');
+    --close-angle: -45deg;
+    transform-origin: top left;
+}
+
+.arm.open .claws::before,.arm.open .claws::after {
+    rotate: var(--close-angle);
+}
+
+.arm-joint::before {
+    --w: 20px;
+    --h: 16px;
+    transform: scale(var(--scale));
+    margin-left: -15px;
+    margin-top: var(--shadow-pos);
+    background-image: url('images/image8.png');
+    background-image: url('images/image9.png');
+    z-index: -1;
+    opacity: 0.5;
+}
+
+button {
+    position: relative;
+    z-index: 5;
+    --w: 24px;
+    --h: 24px;
+    margin: 12px 12px 0 0;
+    border: 0;
+    background-color: transparent;
+    background-image: url('images/image10.png');
+    filter: sepia(1) brightness(0.4);
+    pointer-events: none;
+    cursor: pointer;
+}
+
+.hori-btn {
+    transform: rotate(90deg);
+}
+
+.active {
+    animation: pulse infinite 1s;
+    pointer-events: all;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        filter: sepia(0);
+    }
+    50% {
+        filter: sepia(1);
+    }
+}
+
+.toy.display {
+    transform: scale(3);
+    animation: forwards show-toy-1 0.8s;
+    animation-delay: 1s;
+}
+
+.toy {
+    position: absolute;
+    transition: transform 1s, left 0.3s, top 0.3s;
+    --m: 2;
+    --w: 20px;
+    --h: 27px;
+    transform: rotate(var(--rotate-angle));
+    pointer-events: none;
+}
+
+.toy::after {
+    content: '';
+}
+
+.toy.bear::after {
+    --w: 24px;
+    --h: 30px;
+    top: calc(var(--m) * -2px);
+    left: calc(var(--m) * -2px);
+    background-image: url('images/bear.png');
+}
+
+.toy.bear.grabbed::after {
+    background-image: url('images/bear-close-eyed.png');
+}
+
+.toy-wrapper .toy.bear::after {
+    background-image: url('images/bear.png');
+}
+
+.toy.bunny {
+    --w: 20px;
+    --h: 29px;
+}
+
+.toy.bunny::after {
+    --w: 24px;
+    --h: 32px;
+    top: calc(var(--m) * -2px);
+    left: calc(var(--m) * -2px);
+    background-image: url('images/bunny.png');
+}
+
+.toy.bunny.grabbed::after {
+    background-image: url('images/bunny-wink.png');
+}
+
+.toy-wrapper .toy.bunny::after {
+    background-image: url('images/bunny-close-eyed.png');
+}
+
+.toy.golem::after {
+    --w: 26px;
+    --h: 30px;
+    top: calc(var(--m) * -1px);
+    left: calc(var(--m) * -3px);
+    background-image: url('images/golem.png');
+}
+
+.toy.golem.grabbed::after {
+    background-image: url('images/golem-shocked.png');
+}
+
+.toy-wrapper .toy.golem::after {
+    background-image: url('images/golem-happy.png');
+}
+
+.toy.cucumber::after {
+    --w: 16px;
+    --h: 30px;
+    top: calc(var(--m) * 1px);
+    left: 0;
+    background-image: url('images/cucumber.png');
+}
+
+.toy.cucumber.grabbed::after {
+    background-image: url('images/cucumber-smirk.png');
+}
+
+.toy.wrapper .toy.cucumber::after {
+    background-image: url('images/cucumber-happy.png');
+}
