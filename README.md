@@ -20,6 +20,9 @@
 - Applied CSS animation and transitions to create movements
 - Handling multiple toys with animations
 
+# Links
+https://www.w3schools.com/colors/colors_picker.asp
+
 # Video
 https://github.com/user-attachments/assets/d8a14e2b-5ddc-4f79-b242-538a5739b26b
 
