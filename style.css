@@ -465,7 +465,7 @@ button {
     background-image: url('images/cucumber-smirk.png');
 }
 
-.toy.wrapper .toy.cucumber::after {
+.toy-wrapper .toy.cucumber::after {
     background-image: url('images/cucumber-happy.png');
 }
 
