@@ -6,11 +6,11 @@ body {
     padding: 0;
     margin: 0;
     font-family: sans-serif;
-    background-color: #84dfe2;
-    --brown: #57280f;
-    --blue: #33a5da;
-    --dark-blue: #3a94b7;
-    --machine-color: #32c2db;
+    background-color: #fff6fa;
+    --brown: #b5838d;
+    --blue: #a0c4ff;
+    --lavendar: #cdb4db;
+    --machine-color: #ffc8dd;
     --machine-width: 160px;
     --m: 2;
 }
@@ -113,7 +113,7 @@ body {
 
 .box {
     position: relative;
-    background-color: #7fcfed;
+    background-color: #d4b3e2;
     --w: var(--machine-width);
     --h: 180px;
 }
@@ -234,7 +234,7 @@ body {
     --h: 60px;
     width: 100%;
     text-align: right;
-    background-color: var(--dark-blue);
+    background-color: var(--lavendar);
 }
 
 .cover {
